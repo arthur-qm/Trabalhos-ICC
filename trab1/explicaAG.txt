@@ -1,0 +1,101 @@
+====INTEGRANTES DO GRUPO
+- Arthur Queiroz Moura (NUSP 13671532)
+- João Pedro Moura Diniz Araújo (NUSP 13671869)
+
+
+====OBJETIVO DO ALGORITMO GENÉTICO
+- Encontrar números complexos da forma a + bi com 'a' e 'b' inteiros
+  próximos (ou iguais) das raízes de um polinômio de grau 'n' qualquer
+  informado pelo usuário, o qual também possui coeficientes complexos
+  com partes imaginária e real inteiras.
+
+
+====DESCRIÇÂO DE COMO USAR O PROGRAMA
+- Primeiramente, o usuário deve digitar o grau 'n' do polinômio que
+  se quer analisar e, depois disso, informar as partes real e imaginária
+  de cada um de seus coeficientes.
+
+- Depois, ele deve digitar os parâmetros relacionados ao algoritmo
+  genético, como número de gerações, alcance da primeira geração aleatória,
+  maior bit possível a ser mutado etc..
+
+
+====EXEMPLOS DE CASO TESTE
+1) Considere a equação polinomial
+x^6 - 2x^5 - x^4 + 6x^3 -10x^2 + 8x - 8 = 0
+Para colocá-la no programa, basta colocar grau 6 e ir
+digitando 1, 0, -2, 0, -1, 0, 6, 0, -10, 0, 8, 0, -8, 0 (conforme o programa vai pedindo)
+(onde os zeros correspondem à parte imaginária dos coeficientes, que sempre é nula)
+
+Note que (verifique com o wolframalpha) esse polinômio possui as raízes
+2, -2, i, -i, 1-i, 1+i
+
+Agora, digite
+1000 para o numero de geracoes 
+100 para a populacao maxima
+4 para a chance de mutacao do bit menos significante
+20 para a porcentagem de melhores a serem cruzados entre si
+15 para o range de numeros da primeira geracao
+4 para o maior bit que pode ser mutado
+
+E note tambem que nosso programa diz que as 6 melhores solucoes que encontrou sao
+exatamente as 6 raizes desse polinomio de grau 6!
+
+
+
+2) Caso em que nenhuma raiz e da forma a+bi com a e b inteiros
+Considere o polinomio
+x^8 - i * x^5 - (2 - 3 * i) * x + 4 *i = 0
+Colocando no wolframalpha, suas raízes aproximadas são:
+-1.00-0.48i
+-0.98+0.47i
+-0.76+0.66i
+-0.31-1.30i
++0.09+1.11i
++0.62-1.13i
++1.08+0.82i
++1.26-0.15i
+
+Note que elas são bem próximas da origem e que o programa corresponde às nossas expectativas:
+Coloque a entrada como sendo
+(Parte dos coeficientes)
+
+1
+0
+
+0
+0
+
+0
+0
+
+0
+-1
+
+0
+0
+
+0
+0
+
+0
+0
+
+-2
+3
+
+0
+4
+
+(Parametros do AG em ordem)
+1000
+100
+4
+20
+7
+3
+
+Numeros dados pelo programa como saida:
+i, -1, 0, 1, -i, 1+i, -1+i, 1-i
+Ou seja, verifique que eles estao relativamente proximos das raizes desse polinomio (escritas acima)
+
